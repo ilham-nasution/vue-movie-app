@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <MovieList :movie-list="movieList" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
+
+import MovieList from './components/MovieList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MovieList
+  },
+  data () {
+    return {
+      movieList: []
+    }
+  },
+  mounted () {
+    axios
+      .get('https://api.themoviedb.org/3/movie/now_playing?api_key=3501a4de928092aef0a6315cef680fcf')
+      .then(res => (this.movieList = res.data.results))
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  .container {
+    margin: 0 80px;
+  }
 </style>
