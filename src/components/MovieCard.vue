@@ -1,14 +1,14 @@
 <template>
-  <div class="movie-card">
+  <router-link :to="'movie/' + movie.id" class="movie-card text-decoration-none">
     <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :alt="movie.title">
     <h5>{{ movie.title }}</h5>
     <p>{{movie.vote_average}}</p>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: 'Movie',
+  name: 'MovieCard',
   props: {
     movie: Object
   }
@@ -34,6 +34,7 @@ export default {
   h5 {
     text-align: center;
     min-height: 56px;
+    margin-top: 8px;
   }
 
   img {
@@ -51,5 +52,6 @@ export default {
     align-items: center;
     margin-bottom: 36px;
     box-shadow: 0 0 4px 2px rgb(202, 202, 202);
+    color: black;
   }
 </style>

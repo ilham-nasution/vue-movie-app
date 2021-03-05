@@ -2,14 +2,14 @@
   <div>
     <b-row cols="2" cols-md="4">
       <b-col v-for="movie in movieList" :key="movie.id">
-        <Movie :movie="movie" />
+        <MovieCard :movie="movie" />
       </b-col>
     </b-row>
   </div>
 </template>
 
 <script>
-import Movie from './Movie'
+import MovieCard from './MovieCard'
 
 export default {
   name: 'MovieList',
@@ -17,7 +17,7 @@ export default {
     movieList: Array
   },
   components: {
-    Movie
+    MovieCard
   }
 }
 </script>

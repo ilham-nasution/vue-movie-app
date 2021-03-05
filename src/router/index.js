@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Home from '../views/Home.vue'
-import UpcomingMovie from '../views/UpcomingMovie.vue'
+import MovieUpcoming from '../views/MovieUpcoming.vue'
+import MovieDetail from '../views/MovieDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -13,8 +15,13 @@ const routes = [
   },
   {
     path: '/upcoming-movie',
-    name: 'UpcomingMovie',
-    component: UpcomingMovie
+    name: 'MovieUpcoming',
+    component: MovieUpcoming
+  },
+  {
+    path: '/movie/:id',
+    name: 'MovieDetail',
+    component: MovieDetail
   }
 ]
 

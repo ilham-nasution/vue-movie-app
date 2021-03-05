@@ -1,6 +1,6 @@
 <template>
   <div>
-     <h1>Now Playing</h1>
+    <h1>Now Playing</h1>
     <MovieList :movieList="movieList" />
   </div>
 </template>

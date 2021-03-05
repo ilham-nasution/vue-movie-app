@@ -11,7 +11,7 @@ import axios from 'axios'
 import MovieList from '../components/MovieList'
 
 export default {
-  name: 'UpcomingMovie',
+  name: 'MovieUpcoming',
   components: {
     MovieList
   },
