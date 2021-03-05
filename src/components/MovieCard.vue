@@ -51,7 +51,7 @@ export default {
     justify-content: center;
     align-items: center;
     margin-bottom: 36px;
-    box-shadow: 0 0 4px 2px rgb(202, 202, 202);
+    box-shadow: 1px 1px 4px 2px rgb(212, 212, 212);
     color: black;
   }
 </style>
