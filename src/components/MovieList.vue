@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h1>Now Playing</h1>
-    <div class="movie-list">
-      <div v-for="movie in movieList" :key="movie.id">
+    <b-row cols="2" cols-md="4">
+      <b-col v-for="movie in movieList" :key="movie.id">
         <Movie :movie="movie" />
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -22,11 +21,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .movie-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 8px;
-  }
-</style>

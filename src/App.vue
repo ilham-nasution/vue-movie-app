@@ -1,34 +1,27 @@
 <template>
-  <div class="container">
-    <MovieList :movie-list="movieList" />
+  <div>
+    <Navbar />
+    <b-container class="mt-5 pt-5">
+      <router-view/>
+    </b-container>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import Vue from 'vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import MovieList from './components/MovieList.vue'
+import Navbar from './components/Navbar.vue'
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 export default {
   name: 'App',
   components: {
-    MovieList
-  },
-  data () {
-    return {
-      movieList: []
-    }
-  },
-  mounted () {
-    axios
-      .get('https://api.themoviedb.org/3/movie/now_playing?api_key=3501a4de928092aef0a6315cef680fcf')
-      .then(res => (this.movieList = res.data.results))
+    Navbar
   }
 }
 </script>
-
-<style scoped>
-  .container {
-    margin: 0 80px;
-  }
-</style>
